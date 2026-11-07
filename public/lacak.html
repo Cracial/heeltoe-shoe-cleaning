@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lacak Order — Sepatu Kinclong</title>
+  <meta name="description" content="Lacak status cuci sepatu Anda, bayar via QRIS, dan ajukan komplain.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body data-page="lacak">
+  <header id="site-nav"></header>
+  <main>
+    <section class="page-hero" style="padding-bottom:24px">
+      <div class="wrap">
+        <span class="eyebrow">Lacak order</span>
+        <h1 style="font-size:clamp(30px,4vw,44px)">Di mana sepatu saya sekarang?</h1>
+        <p class="lead">Masukkan kode order (ada di nota atau pesan WhatsApp) dan nomor HP yang didaftarkan.</p>
+        <form id="track-form" class="card card-pad track-form" style="margin-top:20px">
+          <div><label for="t-code">Kode order</label><input id="t-code" name="code" required placeholder="SK-261025-001" autocapitalize="characters" class="mono"></div>
+          <div><label for="t-phone">Nomor HP</label><input id="t-phone" name="phone" required inputmode="tel" placeholder="0812xxxxxxx"></div>
+          <button class="btn btn-primary btn-lg" type="submit">Lacak</button>
+        </form>
+      </div>
+    </section>
+    <section style="padding-top:0"><div class="wrap" id="result"></div></section>
+  </main>
+  <footer id="site-foot"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/lacak.js"></script>
+</body>
+</html>

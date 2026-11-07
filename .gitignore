@@ -1,0 +1,48 @@
+node_modules/
+data/
+*.db
+*.db-wal
+*.db-shm
+.env
+
+# HeelToe project protection
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# SQLite database and backups
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Dependencies and build output
+**/node_modules/
+**/dist/
+**/coverage/
+
+# Playwright and test output
+**/playwright-report/
+**/test-results/
+**/.nyc_output/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Local editor settings
+.idea/
+.vscode/*
+!.vscode/extensions.json

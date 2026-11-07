@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk Staf — Sepatu Kinclong</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="card login-card">
+      <a href="/" style="display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);font-weight:800;font-size:18px;margin-bottom:22px"><img src="/favicon.svg" width="34" height="34" alt="">Sepatu Kinclong</a>
+      <h1 style="font-size:22px">Masuk ke aplikasi staf</h1>
+      <p class="muted small">Front office, back office, kurir, dan pemilik.</p>
+      <form id="login-form">
+        <div class="field"><label for="u">Username</label><input id="u" name="username" required autocomplete="username" autocapitalize="none"></div>
+        <div class="field"><label for="p">Password</label><input id="p" name="password" type="password" required autocomplete="current-password"></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Masuk</button>
+      </form>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+  <script>
+    (async () => {
+      try { await SK.api('/api/auth/me'); location.replace('/app'); } catch { /* belum login */ }
+    })();
+    const f = document.getElementById('login-form');
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      await SK.withBusy(f.querySelector('button'), async () => {
+        try {
+          const u = await SK.api('/api/auth/login', { method: 'POST', body: SK.formData(f) });
+          location.replace(u.role === 'kurir' ? '/app#/kurir' : '/app');
+        } catch (err) { SK.toast(err.message, 'err'); }
+      });
+    });
+  </script>
+</body>
+</html>

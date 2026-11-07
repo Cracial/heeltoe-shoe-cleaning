@@ -1,0 +1,170 @@
+/* Pengaturan usaha */
+.settings-page {
+  width: 100%;
+}
+
+.settings-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.settings-panel {
+  min-width: 0;
+}
+
+.settings-panel-heading {
+  margin-bottom: 18px;
+}
+
+.settings-panel-heading h2 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.settings-panel-heading p {
+  margin: 0;
+}
+
+.settings-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.settings-field:last-child {
+  margin-bottom: 0;
+}
+
+.settings-field label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.settings-field input,
+.settings-field textarea {
+  width: 100%;
+  min-width: 0;
+}
+
+.settings-field textarea {
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.settings-field small {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.settings-fields-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+}
+
+.settings-side-column {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.settings-qris-info {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+.settings-qris-info span {
+  color: var(--muted);
+}
+
+.settings-qris-payload textarea {
+  min-height: 116px;
+  font-family: var(--mono, monospace);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.settings-help {
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+
+.settings-webhook-code {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  margin: 12px 0;
+}
+
+.settings-webhook-code strong {
+  font-size: 12px;
+}
+
+.settings-webhook-code code {
+  display: block;
+  min-width: 0;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.settings-regenerate-check {
+  align-items: flex-start;
+  margin: 14px 0 8px;
+}
+
+.settings-regenerate-check input {
+  margin-top: 3px;
+  flex: none;
+}
+
+.settings-submit-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-side-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .settings-side-column > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .settings-side-column,
+  .settings-fields-two {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-side-column > :last-child {
+    grid-column: auto;
+  }
+
+  .settings-submit-row,
+  .settings-submit-row .btn {
+    width: 100%;
+  }
+}

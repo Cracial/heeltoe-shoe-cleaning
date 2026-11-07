@@ -1,0 +1,22 @@
+{
+    "name":  "heeltoe-shoe-cleaning",
+    "version":  "1.0.0",
+    "description":  "Full-stack web application for HeelToe Shoe Cleaning UMKM: React frontend, Node.js API, SQLite, orders, payments, inventory, delivery, disputes, reports, and business administration.",
+    "main":  "server.js",
+    "private":  true,
+    "engines":  {
+                    "node":  "\u003e=22.13"
+                },
+    "scripts":  {
+                    "start":  "node --disable-warning=ExperimentalWarning server.js",
+                    "dev":  "node --disable-warning=ExperimentalWarning --watch server.js",
+                    "reset-db":  "node --disable-warning=ExperimentalWarning scripts/reset-db.js",
+                    "test":  "node --disable-warning=ExperimentalWarning --test test/*.test.js",
+                    "build":  "npm --prefix frontend run build",
+                    "frontend:install":  "npm ci --prefix frontend",
+                    "frontend:dev":  "npm --prefix frontend run dev",
+                    "test:e2e":  "npm run test:e2e --prefix frontend",
+                    "lint:frontend":  "npm run lint --prefix frontend"
+                },
+    "license":  "UNLICENSED"
+}
